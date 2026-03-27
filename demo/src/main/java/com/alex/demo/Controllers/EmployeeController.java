@@ -4,6 +4,9 @@ import com.alex.demo.Entities.Employee;
 import com.alex.demo.Service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/employees")
@@ -14,8 +17,8 @@ public class EmployeeController {
         this.employeeService = employeeService;
     }
 
-    @GetMapping
-    public List<Employee> getAllEmployees() {
+    @GetMapping("/all")
+    public List<Employee> list() {
         return employeeService.getAllEmployees();
     }
 }
