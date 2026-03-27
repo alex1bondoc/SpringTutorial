@@ -7,16 +7,29 @@ import java.util.Date;
 @Table(name = "EMP", schema = "C##ALEX")
 public class Employee {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
-    private String ename;
-    private String job;
-    private Integer mgr;
-    private Date hiredate;
-    private int sal;
-    private Integer comm;
-    private int deptno;
+    @Column(name = "EMPNO") // Verifică în DBeaver dacă coloana de ID se numește EMPNO
+    private Integer id;
 
+    @Column(name = "ENAME") // În Oracle EMP, numele e de obicei ENAME
+    private String ename;
+
+    @Column(name = "JOB")
+    private String job;
+
+    @Column(name = "MGR")
+    private Integer mgr;
+
+    @Column(name = "HIREDATE")
+    private java.util.Date hiredate;
+
+    @Column(name = "SAL")
+    private Integer sal;
+
+    @Column(name = "COMM")
+    private Integer comm;
+
+    @Column(name = "DEPTNO")
+    private Integer deptno;
     public Employee() {}
     public Employee(int id, String ename, String job, Integer mgr, Date hiredate, int salary, Integer comm, int deptno) {
         this.id = id;
